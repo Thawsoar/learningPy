@@ -5,7 +5,7 @@
 
 
 - 配置Github 图床
-    > 配置文件config.yaml
+    > 新建配置文件config.yaml
     
     ```yaml
     GithubName: example
