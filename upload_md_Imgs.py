@@ -33,7 +33,6 @@ def action(elem, pydoc):
 
 
 if __name__ == '__main__':
-    print(sys.argv)
     filePath = ''
     if len(sys.argv) > 1:
         filePath = sys.argv[1]
