@@ -73,3 +73,11 @@
        ```shell
        tagToMd [指定解析目录] [指定生成的目录]
        ```
+
+## feature: zen.py
+
+> Alfred4 workflow  禅道相关的快捷操作
+
+- [x] 查看未解决的bug列表，回车跳转详情
+- [ ] 关闭bug提交注释后调用企业微信api发送消息给对应测试
+
