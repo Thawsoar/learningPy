@@ -1,6 +1,6 @@
 # 记录用Python解决的一些问题
 
-[toc]
+[TOC]
 
 ## feature: upload_md_imgs.py
 > 解析本地markdown文件获取本地图片的地址并上传至github图床后替换本地图片路径

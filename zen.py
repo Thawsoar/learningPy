@@ -16,7 +16,7 @@ def search_my_bug():
     headers = {
         'Content-Type': 'text/html; Language=UTF-8;charset=UTF-8',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-        'Cookie': 'lang=zh-cn; device=desktop; theme=default; keepLogin=on; za=taoxiang.tao; lastProject=220; preBranch=0; lastProduct=42; ajax_lastNext=on; preProjectID=220; projectTaskOrder=status%2Cid_desc; selfClose=0; zp=512c8cef2aa1d1429a3b14b59017288ddf155857; downloading=1; selfClose=1; windowWidth=1680; windowHeight=850; zentaosid=qmrgd782sip40fdmmmc53k5a16'
+        'Cookie': 'lang=zh-cn; device=desktop; theme=default; keepLogin=on; za=taoxiang.tao; lastProject=220; preBranch=0; lastProduct=42; ajax_lastNext=on; preProjectID=220; projectTaskOrder=status%2Cid_desc; selfClose=0; pagerMyBug=20; zp=9e2b10dfc06295f85b6e0b74563f9b3967741a9a; downloading=1; selfClose=1; windowHeight=866; windowWidth=984; zentaosid=qmrgd782sip40fdmmmc53k5a16'
     }
     query_data = web.get(url=url, headers=headers).json()
     json_query_data = json.loads(query_data['data'])
@@ -24,8 +24,8 @@ def search_my_bug():
     for item in json_query_data['bugs']:
         map_obj = {
             'uid': item['id'],
-            'title': item['id'],
-            'subtitle': item['title'],
+            'subtitle': item['id'],
+            'title': item['title'],
             'arg': 'http://chandao.hgj.net/zentao/bug-view-{}.html'.format(item['id']),
             'valid': True,
         }
