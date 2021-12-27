@@ -1,0 +1,29 @@
+
+# 数据库连接配置
+
+# 数据源
+from_db:
+  host: example
+  port: example
+  user: example
+  password: example
+  database: example
+
+# 需要同步的数据库
+to_db:
+  host: localhost
+  port: 3306
+  user: root
+  password: password
+  database: egg-server
+
+# 需要同步的名称
+tables:
+  - wx_shop_auth_info
+  - wx_shop_token
+  - wx_component_verify_ticket
+  - wx_component_token
+  - wx_authorization_info
+
+# 定时执行脚本 每{timer}秒执行脚本
+timer: 3600

@@ -84,3 +84,57 @@
 - [x] 查看未解决的bug列表，回车跳转详情
 - [ ] 关闭bug提交注释后调用企业微信api发送消息给对应测试
 
+
+## feature: perform_task_timer.py
+
+> 周期性执行脚本 同步两个数据库的表数据
+
+> sync_data.py 同步脚本
+> sync_data.log 同步脚本的日志文件
+
+
+### Usage
+- 配置文件sql_config.yaml
+```yaml
+
+# 数据库连接配置
+
+# 数据源
+from_db:
+  host: example
+  port: example
+  user: example
+  password: example
+  database: example
+
+# 需要同步的数据库
+to_db:
+  host: localhost
+  port: 3306
+  user: root
+  password: password
+  database: egg-server
+
+# 需要同步的表名称
+tables:
+  - wx_shop_auth_info
+  - wx_shop_token
+  - wx_component_verify_ticket
+  - wx_component_token
+  - wx_authorization_info
+
+# 定时执行脚本 每{timer}秒执行脚本
+timer: 3600
+
+```
+- 使用方式
+
+    - 周期性执行脚本
+    ```shell
+    python3 perform_task_timer.py
+    ```
+
+    - 只执行一次
+    ```shell
+    python3 sync_data.py
+    ```
