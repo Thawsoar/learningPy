@@ -178,7 +178,7 @@ def main():
     except Exception as e:
         print("Error: ", e)
         logging.exception(e)
-    time.sleep(10)
+    # time.sleep(10)
 
     # 周期性任务
     if not config['once']:
