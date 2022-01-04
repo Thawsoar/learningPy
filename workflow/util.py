@@ -23,7 +23,7 @@ import os
 import signal
 import subprocess
 import sys
-from threading import Event
+from sync_threading import Event
 import time
 
 # JXA scripts to call Alfred's API via the Scripting Bridge

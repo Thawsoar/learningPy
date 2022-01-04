@@ -10,8 +10,9 @@ import time
 import os
 import sched
 import yaml
-schedule = sched.scheduler(time.time, time.sleep)
+import threading
 
+schedule = sched.scheduler(time.time, time.sleep)
 
 
 def perform_command(cmd, inc):
@@ -31,7 +32,14 @@ def get_config(config_name):
         return yaml.safe_load(f)
 
 
+def printHello():
+    print("start")
+    timer = threading.Timer(5,printHello)
+    timer.start()
+
 if __name__ == "__main__":
     # 数据源
-    config = get_config('sql_config.yaml')
-    timming_exe('python3 sync_data.py', config['timer'])
+    # config = get_config('sql_config.yaml')
+    # timming_exe('python3 sync_data.py', config['timer'])
+    timer = threading.Timer(1,printHello)
+    timer.start()

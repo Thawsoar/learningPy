@@ -87,16 +87,21 @@
 
 ## feature: perform_task_timer.py
 
-> 周期性执行脚本 同步两个数据库的表数据
-
-> sync_data.py 同步脚本
-> sync_data.log 同步脚本的日志文件
+- 前提： 需要同步的两个数据库的表结构相同
+- 功能：
+  - 将两个数据库的相同的表结构数据通过id同步，更新或者插入
+  - 每个表一个线程同步数据
+  - 单独开一个进程用于定期清除日志
+- 配置：
+  - {from_db} 数据来源的数据库配置
+  - {to_db} 需要被同步的数据库配置
+  - {tables} 需要配置的表名
+  - {size}支持配置每页条数，分页同步数据
 
 
 ### Usage
 - 配置文件sql_config.yaml
 ```yaml
-
 # 数据库连接配置
 
 # 数据源
@@ -115,7 +120,7 @@ to_db:
   password: password
   database: egg-server
 
-# 需要同步的表名称
+# 需要同步的名称
 tables:
   - wx_shop_auth_info
   - wx_shop_token
@@ -123,18 +128,20 @@ tables:
   - wx_component_token
   - wx_authorization_info
 
-# 定时执行脚本 每{timer}秒执行脚本
-timer: 3600
+# 执行脚本 每{timer}秒执行脚本 {immediately}立刻执行一次后周期性执行 {once}只执行一次
+timer: 1
+immediately: True
+once: False
+
+# 分页同步{size}条数据
+size: 50
+
 
 ```
 - 使用方式
 
-    - 周期性执行脚本
-    ```shell
-    python3 perform_task_timer.py
-    ```
-
-    - 只执行一次
     ```shell
     python3 sync_data.py
     ```
+
+

@@ -25,5 +25,10 @@ tables:
   - wx_component_token
   - wx_authorization_info
 
-# 定时执行脚本 每{timer}秒执行脚本
-timer: 3600
+# 执行脚本 每{timer}秒执行脚本 {immediately}立刻执行一次后周期性执行 {once}只执行一次
+timer: 1
+immediately: True
+once: False
+
+# 分页同步{size}条数据
+size: 50
