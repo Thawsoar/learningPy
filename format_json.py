@@ -2,12 +2,12 @@
 
 import json
 
-def format_str(string, index=0, split_str="-"):
+def format_str(string, index=0, split_str="-", replace_str="a1"):
 
     split_list = string.split(split_str)
     insert_index = len(split_list) - 1 + index
 
-    split_list.insert(insert_index, 'a1')
+    split_list.insert(insert_index, replace_str)
     return split_str.join(split_list)
 
 with open("/Users/tx/Desktop/api.json", "r") as load_f:
