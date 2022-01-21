@@ -178,6 +178,7 @@ pyobjc-framework-UserNotifications = "==8.1"
 pyobjc-framework-VideoSubscriberAccount = "==8.1"
 pyobjc-framework-WebKit = "==8.1"
 PyYAML = "==6.0"
+wechatpy = "*"
 
 [dev-packages]
 
