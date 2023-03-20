@@ -229,7 +229,7 @@ class ZentaoCli(object):
 
 
 if __name__ == "__main__":
-    cli = ZentaoCli("http://chandao.hgj.net/zentao", "taoxiang.tao", "Tx~12138", override=False)
+    cli = ZentaoCli("http://chandao.hgj.net/zentao", "taoxiang.tao", "123456", override=False)
     cli.login()
     cli.get_user_list()
     cli.get_build_branch()
